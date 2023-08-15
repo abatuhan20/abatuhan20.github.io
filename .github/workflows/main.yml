@@ -50,5 +50,7 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v1
         with:
-          PUBLISH_BRANCH: main
-          PUBLISH_DIR: /
+          token: ${{ secrets.GITHUB_TOKEN }}
+          source-branch: main
+          deploy-branch: gh-pages # Yayınlamak istediğiniz hedef dal
+          folder: ./dist # Yayınlamak istediğiniz klasör
