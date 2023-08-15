@@ -25,7 +25,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: "https://abatuhan20.github.io/"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -49,8 +49,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          source-branch: main
-          deploy-branch: gh-pages # Yayınlamak istediğiniz hedef dal
-          folder: ./dist # Yayınlamak istediğiniz klasör
